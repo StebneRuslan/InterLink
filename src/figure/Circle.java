@@ -2,9 +2,6 @@ package figure;
 
 import java.util.Random;
 
-/**
- * Created by ruslan on 11.07.17.
- */
 public class Circle extends Figure{
     private double radius;
 

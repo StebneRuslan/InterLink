@@ -2,9 +2,6 @@ package figure;
 
 import java.util.Random;
 
-/**
- * Created by ruslan on 11.07.17.
- */
 public class Square extends Figure {
     private double line;
     Square() {

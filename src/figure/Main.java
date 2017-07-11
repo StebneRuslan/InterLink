@@ -2,6 +2,7 @@ package figure;
 
 import java.util.Random;
 
+
 public class Main {
     private Figure[] figures;
 

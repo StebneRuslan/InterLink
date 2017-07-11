@@ -3,9 +3,6 @@ package figure;
 import java.awt.*;
 import java.util.Random;
 
-/**
- * Created by ruslan on 11.07.17.
- */
 abstract class Figure {
    Color color;
 
