@@ -23,6 +23,7 @@ public class Triangle extends Figure {
         }
     }
 
+
     private double semiPerimeter(double a, double b, double c){
         return (a + b + c) / 2;
     }
