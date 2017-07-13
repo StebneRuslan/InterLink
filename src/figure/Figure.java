@@ -2,10 +2,9 @@ package figure;
 
 import java.awt.*;
 
-/**
- * Created by ruslan on 11.07.17.
- */
 abstract class Figure {
+
+    public Validation validation = new Validation();
 
     private Color color;
 

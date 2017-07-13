@@ -2,14 +2,11 @@ package figure;
 
 import java.awt.*;
 
-/**
- * Created by ruslan on 11.07.17.
- */
 public class Main {
     public static void main(String[] args) {
         try {
             Square square = new Square(10, Color.black);
-            System.out.println("Figure: Square. Color: " + square.getColor() + ". Area: " + square.area());
+            System.out.println("Figure: Color: " + square.getColor() + ". Area: " + square.area());
 
             Circle circle = new Circle(5, Color.black);
             System.out.println("Figure: Circle. Color: " + circle.getColor() + ". Area: " + circle.area());

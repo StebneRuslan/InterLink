@@ -2,9 +2,6 @@ package figure;
 
 import java.awt.*;
 
-/**
- * Created by ruslan on 12.07.17.
- */
 public class Circle extends Figure {
 
     private double radius;
@@ -30,11 +27,10 @@ public class Circle extends Figure {
     }
 
     public void setRadius(double radius) {
-        if(radius > 0) {
+        if (validation.sideValidation((radius)) != true) {
+            System.out.println("Side cannot be negative. ");
+        } else {
             this.radius = radius;
-        }
-        else {
-            System.out.println("Radius cannot be negative. ");
         }
     }
 }

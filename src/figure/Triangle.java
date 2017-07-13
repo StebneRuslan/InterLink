@@ -2,22 +2,18 @@ package figure;
 
 import java.awt.*;
 
-/**
- * Created by ruslan on 13.07.17.
- */
 public class Triangle extends Figure {
     private double a, b, c;
-    Validation validation = new Validation();
 
     public Triangle(double a, double b, double c, Color color){
         super.setColor(color);
         this.a = a;
         this.b = b;
         this.c = c;
-        if(a <= 0 || b <= 0 || c <= 0 ) {
+        if((a <= 0) || (b <= 0) || (c <= 0)) {
             throw new IllegalArgumentException("Side cannot be negative. ");
         }
-        else if (validation.sidesInequality(a, b, c) == false){
+        else if (!validation.sidesInequality(a, b, c)){
             throw new IllegalArgumentException("The sum of the lengths of two or three sides of a triangle " +
                     "always exceeds the length of the third side. ");
         }
@@ -36,4 +32,39 @@ public class Triangle extends Figure {
         System.out.println("Triangle");
     }
 
+    public double getA() {
+        return a;
+    }
+
+    public void setA(double a) {
+        if (!validation.sideValidation((a))) {
+            System.out.println("Side cannot be negative. ");
+        } else {
+            this.a = a;
+        }
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        if (!validation.sideValidation((b))) {
+            System.out.println("Side cannot be negative. ");
+        } else {
+            this.b = b;
+        }
+    }
+
+    public double getC() {
+        return c;
+    }
+
+    public void setC(double c) {
+        if (!validation.sideValidation((c))) {
+            System.out.println("Side cannot be negative. ");
+        } else {
+            this.c = c;
+        }
+    }
 }

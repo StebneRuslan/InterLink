@@ -2,11 +2,7 @@ package figure;
 
 import java.awt.*;
 
-/**
- * Created by ruslan on 12.07.17.
- */
 public class Square extends Figure {
-
     private double side;
 
     public Square(double side, Color color) {
@@ -30,11 +26,10 @@ public class Square extends Figure {
     }
 
     public void setSide(double side) {
-        if(side > 0) {
-            this.side = side;
-        }
-        else {
+        if (!validation.sideValidation((side))) {
             System.out.println("Side cannot be negative. ");
+        } else {
+            this.side = side;
         }
     }
 }
