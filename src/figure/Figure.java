@@ -2,7 +2,7 @@ package figure;
 
 import java.awt.*;
 
-abstract class Figure {
+public abstract class Figure {
 
     public Validation validation = new Validation();
 

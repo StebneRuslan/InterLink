@@ -9,7 +9,7 @@ public class Square extends Figure {
     public Square(double side, Color color) {
         super.setColor(color);
         this.side = side;
-        if(side <= 0) {
+        if (!validation.sideValidation(side)) {
             throw new IllegalArgumentException("Side cannot be negative. ");
         }
     }
@@ -27,10 +27,10 @@ public class Square extends Figure {
     }
 
     public void setSide(double side) {
-        if (validation.sideValidation(side)) {
-            this.side = side;
-        } else {
+        if (!validation.sideValidation(side)) {
             throw new IllegalArgumentException("Side cannot be negative. ");
+        } else {
+            this.side = side;
         }
     }
 }

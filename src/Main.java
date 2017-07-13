@@ -1,4 +1,7 @@
-package figure;
+import figure.Circle;
+import figure.Figure;
+import figure.Square;
+import figure.Triangle;
 
 import java.awt.*;
 import java.util.ArrayList;

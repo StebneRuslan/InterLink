@@ -9,7 +9,7 @@ public class Circle extends Figure {
     public Circle(double radius, Color color){
         super.setColor(color);
         this.radius = radius;
-        if(radius <= 0) {
+        if (!validation.sideValidation((radius))) {
             throw new IllegalArgumentException("Radius cannot be negative. ");
         }
     }
@@ -27,7 +27,7 @@ public class Circle extends Figure {
     }
 
     public void setRadius(double radius) {
-        if (validation.sideValidation((radius)) != true) {
+        if (!validation.sideValidation((radius))) {
             throw new IllegalArgumentException("Radius cannot be negative. ");
         } else {
             this.radius = radius;
