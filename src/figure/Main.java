@@ -9,23 +9,17 @@ public class Main {
     public static void main(String[] args) {
         try {
             Square square = new Square(10, Color.black);
-            square.area();
+            System.out.println("Figure: Square. Color: " + square.getColor() + ". Area: " + square.area());
 
-            square.setSide(-5);
-            square.area();
-
-            Circle circle = new Circle(10, Color.black);
-            circle.area();
-            circle.setRadius(-2);
-
-            circle.area();
+            Circle circle = new Circle(5, Color.black);
+            System.out.println("Figure: Circle. Color: " + circle.getColor() + ". Area: " + circle.area());
 
             Triangle triangle = new Triangle(5, 1, 5,  Color.blue);
-            triangle.area();
+            System.out.println("Figure: Triangle. Color: " + triangle.getColor() + ". Area: " + triangle.area());
 
-            circle.area();
         }catch (IllegalArgumentException ex){
             System.out.println(ex.fillInStackTrace());
         }
     }
 }
+
