@@ -28,7 +28,7 @@ public class Circle extends Figure {
 
     public void setRadius(double radius) {
         if (validation.sideValidation((radius)) != true) {
-            System.out.println("Side cannot be negative. ");
+            throw new IllegalArgumentException("Radius cannot be negative. ");
         } else {
             this.radius = radius;
         }

@@ -14,8 +14,7 @@ public class Triangle extends Figure {
             throw new IllegalArgumentException("Side cannot be negative. ");
         }
         else if (!validation.sidesInequality(a, b, c)){
-            throw new IllegalArgumentException("The sum of the lengths of two or three sides of a triangle " +
-                    "always exceeds the length of the third side. ");
+            throw new IllegalArgumentException("The triangle is incorrect. ");
         }
     }
 
@@ -36,34 +35,24 @@ public class Triangle extends Figure {
         return a;
     }
 
-    public void setA(double a) {
-        if (!validation.sideValidation((a))) {
-            System.out.println("Side cannot be negative. ");
-        } else {
-            this.a = a;
-        }
-    }
-
     public double getB() {
         return b;
-    }
-
-    public void setB(double b) {
-        if (!validation.sideValidation((b))) {
-            System.out.println("Side cannot be negative. ");
-        } else {
-            this.b = b;
-        }
     }
 
     public double getC() {
         return c;
     }
 
-    public void setC(double c) {
-        if (!validation.sideValidation((c))) {
-            System.out.println("Side cannot be negative. ");
-        } else {
+    public void setSides(double a, double b, double c) {
+
+        if (!validation.sideValidation((a)) || !validation.sideValidation(b) || !validation.sideValidation(c)) {
+            throw new IllegalArgumentException("Side cannot be negative. ");
+        }else if (!validation.sidesInequality(a, b, c)){
+            throw new IllegalArgumentException("The triangle is incorrect. ");
+        }
+        else {
+            this.a = a;
+            this.b = b;
             this.c = c;
         }
     }

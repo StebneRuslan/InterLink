@@ -12,6 +12,11 @@ abstract class Figure {
 
     abstract double area();
 
+    @Override
+    public String toString() {
+        return this.getClass() + " Color: " + this.getColor() + ". Area: " + this.area();
+    }
+
     public Color getColor() {
         return color;
     }

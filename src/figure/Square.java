@@ -3,6 +3,7 @@ package figure;
 import java.awt.*;
 
 public class Square extends Figure {
+
     private double side;
 
     public Square(double side, Color color) {
@@ -26,10 +27,10 @@ public class Square extends Figure {
     }
 
     public void setSide(double side) {
-        if (!validation.sideValidation((side))) {
-            System.out.println("Side cannot be negative. ");
-        } else {
+        if (validation.sideValidation(side)) {
             this.side = side;
+        } else {
+            throw new IllegalArgumentException("Side cannot be negative. ");
         }
     }
 }
