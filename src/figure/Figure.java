@@ -1,28 +1,23 @@
 package figure;
 
 import java.awt.*;
-import java.util.Random;
 
+/**
+ * Created by ruslan on 11.07.17.
+ */
 abstract class Figure {
-   Color color;
 
-   Figure() {
-       Random random = new Random();
-       color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
-   }
+    private Color color;
 
-   abstract double area();
+    abstract void draw();
 
-   abstract String getParams();
+    abstract double area();
 
-   abstract void draw();
+    public Color getColor() {
+        return color;
+    }
 
-    @Override
-    public String toString() {
-        String label = "" + this.getClass();
-        String colorString = "" + color;
-        return "Figure: " + label.substring(6).toLowerCase() + "; area = " +
-                String.format("%.2f", area()) + "; " +
-                getParams() + "; color: " + colorString.substring(14);
+    public void setColor(Color color) {
+        this.color = color;
     }
 }

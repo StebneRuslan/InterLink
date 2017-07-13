@@ -1,38 +1,31 @@
 package figure;
 
-import java.util.Random;
+import java.awt.*;
 
-
+/**
+ * Created by ruslan on 11.07.17.
+ */
 public class Main {
-    private Figure[] figures;
-
-    private Figure randomFigure() {
-        Figure newRandomFigure = new Square();
-        Random random = new Random();
-        int value = random.nextInt(2);
-        switch (value){
-            case 1:
-                newRandomFigure = new Circle();
-                break;
-        }
-        return newRandomFigure;
-    }
-
-    Main(int figureCount) {
-        figures = new Figure[figureCount];
-        for (int i = 0; i < figureCount; i++){
-            figures[i] = randomFigure();
-        }
-    }
-
-    public  void printAll() {
-        for(Figure i : figures) {
-            System.out.println(i);
-        }
-    }
-
     public static void main(String[] args) {
-        Main main = new Main(5);
-        main.printAll();
+        try {
+            Square square = new Square(10, Color.black);
+            square.area();
+
+            square.setSide(-5);
+            square.area();
+
+            Circle circle = new Circle(10, Color.black);
+            circle.area();
+            circle.setRadius(-2);
+
+            circle.area();
+
+            Triangle triangle = new Triangle(5, 1, 5,  Color.blue);
+            triangle.area();
+
+            circle.area();
+        }catch (IllegalArgumentException ex){
+            System.out.println(ex.fillInStackTrace());
+        }
     }
 }

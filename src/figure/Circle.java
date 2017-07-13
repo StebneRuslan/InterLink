@@ -1,25 +1,40 @@
 package figure;
 
-import java.util.Random;
+import java.awt.*;
 
-public class Circle extends Figure{
+/**
+ * Created by ruslan on 12.07.17.
+ */
+public class Circle extends Figure {
+
     private double radius;
 
-    Circle() {
-        super();
-        Random random = new Random();
-        radius = random.nextDouble() * 100.0;
+    public Circle(double radius, Color color){
+        super.setColor(color);
+        this.radius = radius;
+        if(radius <= 0) {
+            throw new IllegalArgumentException("Radius cannot be negative. ");
+        }
     }
 
-    double area() {
-        return radius * radius * Math.PI;
+    public double area(){
+        return Math.pow(radius, 2) * Math.PI;
     }
 
-    String getParams() {
-        return "radius = " + String.format("%.2f", radius);
+    public void draw(){
+        System.out.println("Circle");
     }
 
-    void draw() {
-        System.out.println("Draw a Circle.");
+    public double getRadius() {
+        return radius;
+    }
+
+    public void setRadius(double radius) {
+        if(radius > 0) {
+            this.radius = radius;
+        }
+        else {
+            System.out.println("Radius cannot be negative. ");
+        }
     }
 }

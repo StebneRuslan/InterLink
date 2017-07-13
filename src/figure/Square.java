@@ -1,21 +1,40 @@
 package figure;
 
-import java.util.Random;
+import java.awt.*;
 
+/**
+ * Created by ruslan on 12.07.17.
+ */
 public class Square extends Figure {
-    private double line;
-    Square() {
-        super();
-        Random random = new Random();
-        line = random.nextDouble() * 100.0;
+
+    private double side;
+
+    public Square(double side, Color color) {
+        super.setColor(color);
+        this.side = side;
+        if(side <= 0) {
+            throw new IllegalArgumentException("Side cannot be negative. ");
+        }
     }
-    double area() {
-        return line * line;
+
+    public double area() {
+        return Math.pow(side, 2);
     }
-    String getParams() {
-        return "line = " + String.format("%.2f", line);
+
+    public void draw() {
+        System.out.println("Square");
     }
-    void draw() {
-        System.out.println("Draw a Square.");
+
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
+        if(side > 0) {
+            this.side = side;
+        }
+        else {
+            System.out.println("Side cannot be negative. ");
+        }
     }
 }
